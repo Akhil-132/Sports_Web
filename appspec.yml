@@ -2,16 +2,23 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /var/www/html/images/
+    destination: /var/www/html/  # ✅ This ensures everything (CSS, JS, images) is placed correctly
+permissions:
+  - object: /var/www/html
+    pattern: "**"
+    owner: www-data
+    group: www-data
+    mode: 755
 hooks:
   BeforeInstall:
-    - location: scripts/install_dependencies
+    - location: scripts/install_dependencies.sh  # ✅ Ensure this script exists
       timeout: 300
       runas: root
-    - location: scripts/start_server
+  AfterInstall:
+    - location: scripts/restart_server.sh  # ✅ Restart Apache/Nginx after deployment
       timeout: 300
       runas: root
   ApplicationStop:
-    - location: scripts/stop_server
+    - location: scripts/stop_server.sh
       timeout: 300
       runas: root
