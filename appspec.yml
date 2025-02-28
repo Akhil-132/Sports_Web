@@ -1,7 +1,7 @@
 version: 0.0
 os: linux
 files:
-  - source: assets/css/images
+  - source: /
     destination: /var/www/html/images/
 hooks:
   BeforeInstall:
