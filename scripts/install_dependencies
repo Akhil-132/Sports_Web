@@ -1,0 +1,11 @@
+#!/bin/bash
+set -e  # Exit immediately if any command fails
+
+echo "Updating system packages..."
+sudo yum update -y
+
+echo "Installing required dependencies..."
+sudo yum install -y httpd
+
+echo "Ensuring Apache starts on boot..."
+sudo systemctl enable httpd
