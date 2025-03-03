@@ -1,6 +1,0 @@
-#!/bin/bash
-set -e  # Exit on any error
-
-echo "Updating system and installing dependencies..."
-sudo yum update -y
-sudo yum install -y httpd  # Install Apache
