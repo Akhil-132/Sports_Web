@@ -29,7 +29,6 @@ p{
 .hero-section {
     height: 70vh;
 <<<<<<< HEAD
-    background: url('http://34.203.202.253/Sports_Web/assets/images/sports-tools-copy.jpg') no-repeat center center;
 =======
     background: url('../images/sports-tools\ copy.jpg') no-repeat center center;
 >>>>>>> 5bc9fc2 (Added appspec.yml and deployment script)
