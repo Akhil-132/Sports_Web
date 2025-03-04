@@ -1,26 +1,22 @@
-version: 0.0
+version: 1.0
 os: linux
+
 files:
   - source: /
-<<<<<<< HEAD
-    destination: /var/www/html/
-=======
     destination: /var/www/html
->>>>>>> 5bc9fc2 (Added appspec.yml and deployment script)
 
 hooks:
   BeforeInstall:
     - location: scripts/install_dependencies.sh
       timeout: 300
-      runas: root
-<<<<<<< HEAD
+      runas: ec2-user  # Run as ec2-user instead of root
+
   ApplicationStart:
     - location: scripts/start_server.sh
       timeout: 300
-      runas: root
+      runas: ec2-user
+
   ApplicationStop:
     - location: scripts/stop_server.sh
       timeout: 300
-      runas: root
-=======
->>>>>>> 5bc9fc2 (Added appspec.yml and deployment script)
+      runas: ec2-user
