@@ -2,13 +2,18 @@ version: 0.0
 os: linux
 files:
   - source: /
+<<<<<<< HEAD
     destination: /var/www/html/
+=======
+    destination: /var/www/html
+>>>>>>> 5bc9fc2 (Added appspec.yml and deployment script)
 
 hooks:
   BeforeInstall:
     - location: scripts/install_dependencies.sh
       timeout: 300
       runas: root
+<<<<<<< HEAD
   ApplicationStart:
     - location: scripts/start_server.sh
       timeout: 300
@@ -17,3 +22,5 @@ hooks:
     - location: scripts/stop_server.sh
       timeout: 300
       runas: root
+=======
+>>>>>>> 5bc9fc2 (Added appspec.yml and deployment script)
